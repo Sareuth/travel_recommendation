@@ -114,4 +114,33 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
+
+    position: relative;
 }
+
+#main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  }
+
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    color: white; /* works with your dark background */
+    line-height: 1.6;
+
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-container p {
+    margin-bottom: 15px;
+  }
