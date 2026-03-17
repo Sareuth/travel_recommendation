@@ -1,124 +1,117 @@
-/* Basic CSS for the navigation bar */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
+/* RESET + BASE */
 html,
 body {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    /* 🚫 no vertical scroll */
+    /* removes page scroll */
 }
 
 body {
     display: flex;
     flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
-/* NAV stays natural height */
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
 nav {
-    flex-shrink: 0;
-    background-color: #9399f6;
-    padding: 20px;
+    position: relative;
+    /* needed for centering trick */
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #0f3b46;
+    color: white;
 }
 
-/* MAIN fills remaining space */
+/* LEFT SECTION */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 0 6px rgba(31, 138, 138, 0.6));
+  }
+
+.nav-left h1 {
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* CENTER LINKS — always centered */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* RIGHT SEARCH BAR */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+/* INPUT */
+.nav-right input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+/* BUTTONS */
+.nav-right button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background-color: #1f8a8a;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-right button.clear {
+    background-color: #2ca6a4;
+}
+
+.nav-right button:hover {
+    opacity: 0.9;
+}
+
+/* ===================== */
+/* MAIN CONTENT AREA */
+/* ===================== */
+
 #main {
     flex: 1;
     min-height: 0;
-    /* 🔑 prevents flex overflow issues */
 
     background-image: url("./background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-}
-
-nav ul {
-    list-style-type: none;
-    /* padding: 0; */
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Basic CSS for the form elements */
-body {
-    font-family: Arial, sans-serif;
-    /* margin: 20px; */
-    height: 100%;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-div {
-    margin-bottom: 10px;
-}
-
-label {
-    display: inline-block;
-    width: 100px;
-}
-
-input[type="text"],
-input[type="number"],
-select {
-    width: 200px;
-    padding: 5px;
-}
-
-button {
-    padding: 7px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Basic CSS for the report section */
-h2 {
-    margin-top: 30px;
-}
-
-#report,
-#result {
-    padding: 10px;
-    max-width: 400px;
-    word-wrap: break-word;
-}
-
-#result {
-    height: 400px;
-    width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-}
-
-#result img {
-    width: 200px;
-    height: 100px;
 }

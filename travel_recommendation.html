@@ -7,16 +7,27 @@
     </head>
     <body>
         <nav>
-            <h1>Hollands Travel</h1>
-            <ul>
-                <li><a href="./travel_recommendation.html" id="home">Home </a></li>
-                <li><a href="./travel_about.html" id="about">About Us </a></li>
-                <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
-                <li><input type="text" id="detinationInput" placeholder="Enter a destination or keyword"></li>
-                <li><button id='btnSearch'>Search</button></li>
-                <li><button id='btnClear'>Clear Results</button></li>
+            <div class="nav-left">
+              <img src="./logo.png" alt="logo" class="logo">
+              <h1>Hollands Travel</h1>
+            </div>
+          
+            <ul class="nav-links">
+              <li><a href="./travel_recommendation.html">Home</a></li>
+              <li><a href="./travel_about.html">About Us</a></li>
+              <li><a href="./travel_contact.html">Contact Us</a></li>
             </ul>
+          
+            <div class="nav-right">
+              <input type="text" id="destinationInput" placeholder="🔍 Enter a destination or keyword">
+              <button id='btnSearch'>Search</button>
+              <button id='btnClear' class="clear">Clear</button>
+            </div>
         </nav>
+
+
+
+
         <div id="main">
         </div>
     </body>
