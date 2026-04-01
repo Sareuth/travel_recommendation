@@ -110,7 +110,7 @@ nav {
     flex: 1;
     min-height: 0;
 
-    background-image: url("./background.jpg");
+    background-image: url("./images/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
