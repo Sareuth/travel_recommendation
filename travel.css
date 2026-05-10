@@ -1,10 +1,8 @@
-/* RESET + BASE */
 html,
 body {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    /* removes page scroll */
 }
 
 body {
@@ -14,12 +12,11 @@ body {
 }
 
 /* ===================== */
-/* NAVBAR */
+/* HEADER AREA */
 /* ===================== */
 
 nav {
     position: relative;
-    /* needed for centering trick */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,7 +44,6 @@ nav {
     margin: 0;
 }
 
-/* CENTER LINKS — always centered */
 .nav-links {
     position: absolute;
     left: 50%;
