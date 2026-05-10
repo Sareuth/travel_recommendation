@@ -1,30 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Hollands Travel</title>
-        <link rel="stylesheet" href="./travel.css">
-    </head>
-    <body>
-        <nav>
-            <div class="nav-left">
-              <img src="./images/logo.png" alt="logo" class="logo">
-              <h1>Hollands Travel</h1>
-            </div>
-          
-            <ul class="nav-links">
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./travel_about.html">About Us</a></li>
-              <li><a href="./travel_contact.html">Contact Us</a></li>
-            </ul>
-          
-            <div class="nav-right">
-              <input type="text" id="destinationInput" placeholder="🔍 Enter a destination or keyword">
-              <button id='btnSearch'>Search</button>
-              <button id='btnClear' class="clear">Clear</button>
-            </div>
-        </nav>
-        <div id="main">
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dream Destinations</title>
+    <link rel="stylesheet" href="./travel.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="./images/logo.png" alt="logo" class="logo" />
+        <h1>Dream Destinations</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./travel_about.html">About Us</a></li>
+        <li><a href="./travel_contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <input
+          type="text"
+          id="destinationInput"
+          placeholder="🔍 Enter a destination or keyword"
+        />
+        <button id="btnSearch">Search</button>
+        <button id="btnClear" class="clear">Clear</button>
+      </div>
+    </nav>
+    <div id="main">
+
+      <div class="social-links">
+        <a href="#" aria-label="X">
+          <img src="./images/social/x.svg" alt="X icon" />
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="./images/social/facebook.svg" alt="Facebook icon" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="./images/social/instagram.svg" alt="Instagram icon" />
+        </a>
+        <a href="#" aria-label="YouTube">
+          <img src="./images/social/youtube.svg" alt="YouTube icon" />
+        </a>
+      </div>
+
+      <div class="content-container">
+        <h2>Find Your Next Dream Destination</h2>
+
+        <p>
+          Our Destination Finder App helps you explore popular travel
+          destinations through an interactive and user-friendly interface.
+        </p>
+
+        <p>
+          It helps you search for beaches, temples, countries, or specific
+          country names to view related cities along with images and
+          descriptions.
+        </p>
+
+        <p>
+          It provides a simple and efficient way to discover and plan travel
+          destinations.
+        </p>
+
+        <p>
+          So go ahead and type your dream destination into the search bar above,
+          and let us help your dreams come true.
+        </p>
+      </div>
+
+      <div id="destinations">
+
+      </div>
+    </div>
+    <script src="./travel_recommendation.js"></script>
+  </body>
 </html>

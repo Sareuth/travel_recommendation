@@ -33,7 +33,7 @@ nav {
 }
 
 .logo {
-    height: 40px;
+    height: 80px;
     width: auto;
     filter: drop-shadow(0 0 6px rgba(31, 138, 138, 0.6));
 }
@@ -78,6 +78,7 @@ nav {
     outline: none;
     padding: 8px;
     border-radius: 20px;
+    width: 200px;
 }
 
 /* BUTTONS */
@@ -122,29 +123,50 @@ nav {
     z-index: 0;
   }
 
+.social-links {
+  position: absolute;
+  left: 24px;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* content ABOVE overlay */
+.content-container,
 .about-container,
 .contact-container {
     position: relative;
     z-index: 1;
 }
 
-.about-container {
+.content-container {
     max-width: 800px;
     margin: auto;
     padding: 40px 20px;
     color: white;
-    /* works with your dark background */
     line-height: 1.6;
-
 }
 
-.about-container h2 {
+.content-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.about-container p {
+.content-container p {
     margin-bottom: 15px;
 }
 
@@ -204,4 +226,59 @@ nav {
 
 #contactForm button:hover {
     opacity: 0.9;
+}
+
+#destinations {
+    position: relative;
+    z-index: 1;
+}
+
+.results-panel {
+    max-width: 1000px;
+    max-height: 60vh;
+    margin: 20px auto;
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    overflow-y: auto;
+
+    background: rgba(15, 59, 70, 0.35);
+    border-radius: 16px;
+    color: #222;
+}
+
+.results-panel h2 {
+    width: 100%;
+    color: white;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.destination-card {
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.destination-card h3 {
+    margin: 16px 16px 8px;
+    color: #0f3b46;
+}
+
+.destination-card p {
+    margin: 0 16px 16px;
+    line-height: 1.5;
 }
