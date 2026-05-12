@@ -53,14 +53,17 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
 
-          <button type="submit" onclick="thankyou()">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
     <script>
-      function thankyou() {
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
         alert("Thank you for contacting us!");
-      }
+      });
     </script>
   </body>
 </html>

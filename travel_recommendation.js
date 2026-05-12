@@ -4,30 +4,13 @@ const btnSearch = document.getElementById('btnSearch');
 const btnClear = document.getElementById('btnClear');
 const destinationDiv = document.getElementById('destinations');
 
-function cleanInput(input) {
-    const cleaned = input.trim().toLowerCase();
-
-    switch (cleaned) {
-        case 'country':
-            return 'cities';
-        case 'temple':
-            return 'temples';
-        case 'beach':
-            return 'beaches';
-    }
-
-    return cleaned;
-}
-
 function searchDestinations() {
     const searchTerm = destinationInput.value.trim().toLowerCase();
     if (searchTerm.length == 0) return;
 
-    
     fetch('travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             let results;
             switch (searchTerm) {
                 case 'beach':
@@ -40,11 +23,17 @@ function searchDestinations() {
                     break;
                 case 'country':
                 case 'countries':
-                    results = data['countries']
+                    results = data['countries'].flatMap(country => country.cities);
+                    break;
+                default:
+                    const country = data['countries'].find(country => country.name.toLowerCase() === searchTerm);
+                    if (country) {
+                        results = country.cities;
+                    }
                     break;
             }
 
-            if (results) {
+            if (results && results.length > 0) {
                 let inner = '<div class="results-panel"><h2>Results</h2>';
                 results.forEach(result => {
                     inner += '<div class="destination-card">';
@@ -59,9 +48,6 @@ function searchDestinations() {
                 destinationDiv.innerHTML = '<div class="results-panel"><h2>No locations found</h2></div>';
             }
         });
-
-
-
 }
 
 
@@ -72,3 +58,9 @@ function clearSearch() {
 
 btnSearch.addEventListener('click', searchDestinations);
 btnClear.addEventListener('click', clearSearch);
+destinationInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        searchDestinations();
+    }
+});
